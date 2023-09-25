@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 	"time"
 )
 
@@ -13,4 +14,10 @@ func main() {
 
 	month := now.Month()
 	fmt.Println(month)
+
+	// Replace practice
+	brokenWords := "in#atc #i"
+	replaceWords := strings.NewReplacer("#", "h")
+	fixedWords := replaceWords.Replace(brokenWords)
+	fmt.Println(fixedWords)
 }
