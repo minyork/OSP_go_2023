@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"os"
 	"strings"
 	"time"
@@ -26,6 +27,18 @@ func main() {
 	// get value from the uesr
 	fmt.Print("Enter Your name >> ")
 	reader := bufio.NewReader(os.Stdin)
-	inputName := reader.ReadString('\n')
+	inputName, err := reader.ReadString('\n') // ReadString이 복수개의 값을 리턴함.
+
+	// 솔루션 1
+	//  inputName, _ := reader.ReadString('\n')
+
+	//솔루션 2
+	// inputName, err := reader.ReadString('\n')
+	// log.Fatal(err)
+
+	// 솔루션 3
+	if err != nil {
+		log.Fatal(err)
+	} // err 값이 nil 이 아니면 log 파일 남김.
 	fmt.Println(inputName)
 }
