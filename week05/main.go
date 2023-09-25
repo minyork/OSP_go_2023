@@ -1,7 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"strings"
 	"time"
 )
@@ -16,8 +18,14 @@ func main() {
 	fmt.Println(month)
 
 	// Replace practice
-	brokenWords := "in#atc #i"
-	replaceWords := strings.NewReplacer("#", "h")
-	fixedWords := replaceWords.Replace(brokenWords)
+	brokenWords := "in#atc #i"                      // 고장난 문자
+	replaceWords := strings.NewReplacer("#", "h")   // # 을 h로 바꿀
+	fixedWords := replaceWords.Replace(brokenWords) // 바꿈.
 	fmt.Println(fixedWords)
+
+	// get value from the uesr
+	fmt.Print("Enter Your name >> ")
+	reader := bufio.NewReader(os.Stdin)
+	inputName := reader.ReadString('\n')
+	fmt.Println(inputName)
 }
