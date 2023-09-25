@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -40,5 +41,29 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	} // err 값이 nil 이 아니면 log 파일 남김.
+
 	fmt.Println(inputName)
+
+	fmt.Print("Enter Your Score >> ")
+	inputScore, _ := reader.ReadString('\n')
+	inputScore = strings.TrimSpace(inputScore)       // 쓸모없는 공백 제거
+	score, err := strconv.ParseFloat(inputScore, 64) // string -> Float64
+
+	// if score >= 90 {
+	// 	grade := "A grade"
+	// } else {
+	// 	grade := "under A grade"
+	// }
+	// fmt.Println("You will get", grade)
+	// 에러남. 왜? if 괄호 안에서 변수를 선언했기 때문에 밖에서 출력X
+
+	//고침.
+	var grade string // 밖에서 변수 선언 후
+	if score >= 90 {
+		grade = "A grade" // 대입
+	} else {
+		grade = "under A grade" // 대입
+	}
+	fmt.Println("You will get", grade)
+
 }
