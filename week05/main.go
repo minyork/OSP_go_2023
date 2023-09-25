@@ -71,4 +71,35 @@ func main() {
 	fmt.Println("Random Number")
 	randomNum := rand.Intn(6) + 1 // 6 의미 : 0~5 근데 +1 해서 1~6
 	fmt.Println(randomNum)
+
+	//
+	rand.Seed(time.Now().Unix())
+	answer := rand.Intn(100) + 1 // 1 ~ 100
+	fmt.Println("Guess Number !!(1~100)")
+	fmt.Println(answer)
+
+	for i := 1; i <= 3; i++ { // i는 횟수
+		fmt.Println("남은 기회 : ", 4-i)
+		fmt.Print("Guess number :")
+		inputNumberString, err := reader.ReadString('\n')
+		if err != nil {
+			log.Fatal(err)
+		}
+		inputNumberString = strings.TrimSpace(inputNumberString)
+		inputNumber, err := strconv.Atoi(inputNumberString)
+		// inputNumberString은 내가 입력한거 / 이거를 int로 바꿈.
+		if err != nil {
+			log.Fatal(err)
+		}
+		if inputNumber == answer {
+			fmt.Println("Correct !! Good job")
+			break
+		} else if inputNumber < answer {
+			fmt.Println("Guess Number is lower than answer.")
+		} else if inputNumber > answer {
+			fmt.Println("Guess Number is higher than answer.")
+		}
+
+	}
+
 }
