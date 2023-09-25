@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"log"
+	"math/rand"
 	"os"
 	"strconv"
 	"strings"
@@ -66,4 +67,8 @@ func main() {
 	}
 	fmt.Println("You will get", grade)
 
+	// 난수 발생 코드
+	fmt.Println("Random Number")
+	randomNum := rand.Intn(6) + 1 // 6 의미 : 0~5 근데 +1 해서 1~6
+	fmt.Println(randomNum)
 }
