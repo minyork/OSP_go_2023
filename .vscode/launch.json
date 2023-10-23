@@ -41,8 +41,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/go/week05",
-      "program": "c:/go/week05/build/Debug/outDebug",
+      "cwd": "c:/go/week06",
+      "program": "c:/go/week06/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

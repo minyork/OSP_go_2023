@@ -67,7 +67,7 @@ func main() {
 	}
 	fmt.Println("You will get", grade)
 
-	// 난수 발생 코드
+	// 난수 발생 코드============================
 	fmt.Println("Random Number")
 	randomNum := rand.Intn(6) + 1 // 6 의미 : 0~5 근데 +1 해서 1~6
 	fmt.Println(randomNum)
@@ -87,7 +87,7 @@ func main() {
 		}
 		inputNumberString = strings.TrimSpace(inputNumberString)
 		inputNumber, err := strconv.Atoi(inputNumberString)
-		// inputNumberString은 내가 입력한거 / 이거를 int로 바꿈.
+		// inputNumberString은 내가 입력한거 / 이거를 int로 바꿈. 원래는 ParseInt 해야되는데
 		if err != nil {
 			log.Fatal(err)
 		}
